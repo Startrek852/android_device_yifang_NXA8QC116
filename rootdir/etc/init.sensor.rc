@@ -1,0 +1,13 @@
+#init script for general sensor driver solution, will be called in init.product.rc
+on post-fs-data
+wait /data/system/disable_sensors.txt
+insmod /lib/modules/sensor_general_plugin1_0.ko
+chown system system /sys/devices/generalsensor/start
+chown system system /sys/devices/generalsensor/dbglevel
+chown system system /sys/devices/generalsensor/dbgsensors
+#start general sensor driver
+write /sys/devices/generalsensor/start 1
+chown system system /sys/bus/i2c/devices/3-000f/enable
+chown system system /sys/bus/i2c/devices/3-000f/poll
+chown system system /sys/bus/i2c/devices/3-001d/enable
+chown system system /sys/bus/i2c/devices/3-001d/poll

@@ -1,0 +1,2 @@
+add_lunch_combo full_NXA8QC116-eng
+add_lunch_combo full_NXA8QC116-userdebug
