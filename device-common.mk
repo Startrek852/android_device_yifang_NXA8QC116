@@ -40,7 +40,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.isUsbOtgEnabled=1
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
+    persist.sys.usb.config=mtp,adb
 
 PRODUCT_AAPT_CONFIG := large
 PRODUCT_AAPT_PREF_CONFIG := mdpi
@@ -64,6 +64,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/asound.conf:system/etc/asound.conf \
     $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/audio/route_criteria.conf:system/etc/route_criteria.conf
+    
+#ADB
+ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -83,7 +86,7 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     ro.dalvik.vm.isa.arm=x86
 
 # GPS
-ADDITIONAL_DEFAULT_PROPERTIES += ro.gnss.sv.status=true
+ += ro.gnss.sv.status=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.spid.gps.pmm=disabled
