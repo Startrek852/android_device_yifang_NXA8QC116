@@ -86,7 +86,7 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     ro.dalvik.vm.isa.arm=x86
 
 # GPS
- += ro.gnss.sv.status=true
+ADDITIONAL_DEFAULT_PROPERTIES += ro.gnss.sv.status=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.spid.gps.pmm=disabled
